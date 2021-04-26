@@ -1,0 +1,7 @@
+@mixin rounded_boxes($color) {
+  border-radius: 25px;
+  border: 2px solid $color;
+  width: 120px;
+  height: 40px;
+  color: $color;
+}
