@@ -29,7 +29,6 @@
 
 <script>
     export default {
-        name: "Signing",
         methods: {
             changing() {
                 this.$store.commit('SET_APPLICATION_THEME');

@@ -4,20 +4,18 @@
             <br>
             Account</h2>
 
-        <form>
+        <form @submit.prevent="signup">
             <label>Full Name *</label>
-            <input type="text" name="firstname" value="firstname" required/>
+            <input type="text" v-model="form.name" placeholder="Enter your fullname" required/>
 
             <label>Email *</label>
-            <input type="text" name="firstname" value="firstname" required/>
+            <input type="text" v-model="form.email"  placeholder="Enter your email" required/>
 
             <label>Password *</label>
-            <input type="text" name="firstname" value="firstname" required/>
+            <input type="password" v-model="form.password" placeholder="Enter your password" required/>
 
             <label>Repeat password *</label>
-            <input type="text" name="firstname" value="firstname" required/>
-
-            <button class="main_signup_form_execute">SignUp</button>
+            <input type="password" v-model="password2" placeholder="Confirm password" required/>
 
             <br>
 
@@ -26,14 +24,39 @@
                 and agree to Heap's Terms of Service and <span>Privacy Statement.* </span></label>
             </div>
 
+            <br>
+
+            <button class="main_signup_form_execute">SignUp</button>
+
+
+
         </form>
 
     </div>
 </template>
 
 <script>
+    import axios from "axios";
     export default {
-        name: "SignupForm"
+        data(){
+            return {
+                form : {},
+                password2 : ""
+            }
+        },
+        methods : {
+            signup : function () {
+                if(this.form.password !== this.password2){
+                    console.log("Confirm your password")
+                }else{
+                    console.log("we fine hunnnny")
+                }
+
+                axios.post('register', this.form).then(({data}) => {
+                    console.log(data.data)
+                })
+            }
+        }
     }
 </script>
 

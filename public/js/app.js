@@ -1856,7 +1856,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "Signing",
   methods: {
     changing: function changing() {
       this.$store.commit('SET_APPLICATION_THEME');
@@ -1877,6 +1876,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -1908,8 +1909,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "SigningForm"
+  data: function data() {
+    return {
+      form: {}
+    };
+  },
+  methods: {
+    signIn: function signIn() {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post('login', this.form).then(function (_ref) {
+        var data = _ref.data;
+        console.log(data.data);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -1976,6 +1992,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2009,8 +2027,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "SignupForm"
+  data: function data() {
+    return {
+      form: {},
+      password2: ""
+    };
+  },
+  methods: {
+    signup: function signup() {
+      if (this.form.password !== this.password2) {
+        console.log("Confirm your password");
+      } else {
+        console.log("we fine hunnnny");
+      }
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post('register', this.form).then(function (_ref) {
+        var data = _ref.data;
+        console.log(data.data);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -44687,70 +44729,139 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main_signin_form" }, [
-      _c("h2", [
-        _vm._v("Sign in\n        "),
-        _c("br"),
-        _vm._v("\n        Let Saving Start //")
-      ]),
-      _vm._v(" "),
-      _c("form", [
+  return _c("div", { staticClass: "main_signin_form" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.signIn($event)
+          }
+        }
+      },
+      [
         _c("label", [_vm._v("Full Name *")]),
         _vm._v(" "),
         _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.form.name,
+              expression: "form.name"
+            }
+          ],
           attrs: {
             type: "text",
-            name: "firstname",
-            value: "firstname",
+            placeholder: "Enter your fullname",
             required: ""
+          },
+          domProps: { value: _vm.form.name },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.form, "name", $event.target.value)
+            }
           }
         }),
         _vm._v(" "),
         _c("label", [_vm._v("Email *")]),
         _vm._v(" "),
         _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.form.email,
+              expression: "form.email"
+            }
+          ],
           attrs: {
             type: "text",
-            name: "firstname",
-            value: "firstname",
+            placeholder: "Enter your email",
             required: ""
+          },
+          domProps: { value: _vm.form.email },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.form, "email", $event.target.value)
+            }
           }
         }),
         _vm._v(" "),
         _c("label", [_vm._v("Password *")]),
         _vm._v(" "),
         _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.form.password,
+              expression: "form.password"
+            }
+          ],
           attrs: {
-            type: "text",
-            name: "firstname",
-            value: "firstname",
+            type: "password",
+            placeholder: "Enter your password",
             required: ""
+          },
+          domProps: { value: _vm.form.password },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.form, "password", $event.target.value)
+            }
           }
         }),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _c("br"),
         _vm._v(" "),
         _c("button", { staticClass: "main_signup_form_execute" }, [
           _vm._v("SignIn")
         ]),
         _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _c("div", { staticClass: "terms" }, [
-          _c("input", { attrs: { type: "checkbox", id: "b", required: "" } }),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "b" } }, [
-            _vm._v(
-              " By registering, you confirm you have read\n            and agree to Heap's Terms of Service and "
-            ),
-            _c("span", [_vm._v("Privacy Statement.* ")])
-          ])
-        ])
+        _c("br")
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", [
+      _vm._v("Sign in\n        "),
+      _c("br"),
+      _vm._v("\n        Let Saving Start //")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "terms" }, [
+      _c("input", { attrs: { type: "checkbox", id: "b", required: "" } }),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "b" } }, [
+        _vm._v(
+          " By registering, you confirm you have read\n            and agree to Heap's Terms of Service and "
+        ),
+        _c("span", [_vm._v("Privacy Statement.* ")])
       ])
     ])
   }
@@ -44892,81 +45003,164 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main_signup_form" }, [
-      _c("h2", [
-        _vm._v("Create Your\n        "),
-        _c("br"),
-        _vm._v("\n        Account")
-      ]),
-      _vm._v(" "),
-      _c("form", [
+  return _c("div", { staticClass: "main_signup_form" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.signup($event)
+          }
+        }
+      },
+      [
         _c("label", [_vm._v("Full Name *")]),
         _vm._v(" "),
         _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.form.name,
+              expression: "form.name"
+            }
+          ],
           attrs: {
             type: "text",
-            name: "firstname",
-            value: "firstname",
+            placeholder: "Enter your fullname",
             required: ""
+          },
+          domProps: { value: _vm.form.name },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.form, "name", $event.target.value)
+            }
           }
         }),
         _vm._v(" "),
         _c("label", [_vm._v("Email *")]),
         _vm._v(" "),
         _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.form.email,
+              expression: "form.email"
+            }
+          ],
           attrs: {
             type: "text",
-            name: "firstname",
-            value: "firstname",
+            placeholder: "Enter your email",
             required: ""
+          },
+          domProps: { value: _vm.form.email },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.form, "email", $event.target.value)
+            }
           }
         }),
         _vm._v(" "),
         _c("label", [_vm._v("Password *")]),
         _vm._v(" "),
         _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.form.password,
+              expression: "form.password"
+            }
+          ],
           attrs: {
-            type: "text",
-            name: "firstname",
-            value: "firstname",
+            type: "password",
+            placeholder: "Enter your password",
             required: ""
+          },
+          domProps: { value: _vm.form.password },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.form, "password", $event.target.value)
+            }
           }
         }),
         _vm._v(" "),
         _c("label", [_vm._v("Repeat password *")]),
         _vm._v(" "),
         _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.password2,
+              expression: "password2"
+            }
+          ],
           attrs: {
-            type: "text",
-            name: "firstname",
-            value: "firstname",
+            type: "password",
+            placeholder: "Confirm password",
             required: ""
+          },
+          domProps: { value: _vm.password2 },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.password2 = $event.target.value
+            }
           }
         }),
         _vm._v(" "),
-        _c("button", { staticClass: "main_signup_form_execute" }, [
-          _vm._v("SignUp")
-        ]),
+        _c("br"),
+        _vm._v(" "),
+        _vm._m(1),
         _vm._v(" "),
         _c("br"),
         _vm._v(" "),
-        _c("div", { staticClass: "terms" }, [
-          _c("input", { attrs: { type: "checkbox", id: "b", required: "" } }),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "b" } }, [
-            _vm._v(
-              " By registering, you confirm you have read\n            and agree to Heap's Terms of Service and "
-            ),
-            _c("span", [_vm._v("Privacy Statement.* ")])
-          ])
+        _c("button", { staticClass: "main_signup_form_execute" }, [
+          _vm._v("SignUp")
         ])
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", [
+      _vm._v("Create Your\n        "),
+      _c("br"),
+      _vm._v("\n        Account")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "terms" }, [
+      _c("input", { attrs: { type: "checkbox", id: "b", required: "" } }),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "b" } }, [
+        _vm._v(
+          " By registering, you confirm you have read\n            and agree to Heap's Terms of Service and "
+        ),
+        _c("span", [_vm._v("Privacy Statement.* ")])
       ])
     ])
   }

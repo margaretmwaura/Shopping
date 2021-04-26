@@ -4,17 +4,15 @@
             <br>
             Let Saving Start //</h2>
 
-        <form>
+        <form @submit.prevent="signIn">
             <label>Full Name *</label>
-            <input type="text" name="firstname" value="firstname" required/>
+            <input type="text" v-model="form.name" placeholder="Enter your fullname" required/>
 
             <label>Email *</label>
-            <input type="text" name="firstname" value="firstname" required/>
+            <input type="text" v-model="form.email"  placeholder="Enter your email" required/>
 
             <label>Password *</label>
-            <input type="text" name="firstname" value="firstname" required/>
-
-            <button class="main_signup_form_execute">SignIn</button>
+            <input type="password" v-model="form.password" placeholder="Enter your password" required/>
 
             <br>
 
@@ -23,15 +21,32 @@
                 and agree to Heap's Terms of Service and <span>Privacy Statement.* </span></label>
             </div>
 
-        </form>
+            <br>
 
-        <!--        <button class="main_signin_form_execute">Signin</button>-->
+            <button class="main_signup_form_execute">SignIn</button>
+
+            <br>
+
+        </form>
     </div>
 </template>
 
 <script>
+    import axios from "axios";
+
     export default {
-        name: "SigningForm"
+        data(){
+            return {
+                form : {},
+            }
+        },
+        methods : {
+            signIn : function () {
+                axios.post('login', this.form).then(({data}) => {
+                    console.log(data.data)
+                })
+            }
+        }
     }
 </script>
 
