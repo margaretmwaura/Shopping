@@ -5364,7 +5364,7 @@ html, body {
       font-weight: bolder;
       font-size: 20px;
       padding-bottom: 10px; }
-    .main_signin_form form input[type="text"] {
+    .main_signin_form form input[type="text"], .main_signin_form form input[type="password"] {
       border-radius: 5px;
       border: 1px solid #26004D;
       width: 90%; }
@@ -5457,7 +5457,7 @@ html, body {
       font-weight: bolder;
       font-size: 20px;
       padding-bottom: 10px; }
-    .main_signup_form form input[type="text"] {
+    .main_signup_form form input[type="text"], .main_signup_form form input[type="password"] {
       border-radius: 5px;
       border: 1px solid #26004D;
       width: 90%; }
