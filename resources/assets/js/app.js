@@ -3,6 +3,8 @@ window.Vue = Vue;
 
 require('./bootstrap');
 require('./components');
+
+require('./../sass/app.scss');
 import store from "./appstore/store";
 
 

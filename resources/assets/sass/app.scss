@@ -1,9 +1,33 @@
-// Fonts
+@import "colors";
+@import "mixins";
+@import "../../../foundation/css/app.css";
+@import "../../../foundation/css/foundation.css";
+@import "main";
+@import "Signin/signin";
+@import "Signup/signup";
+@import "Home/home";
 
-//@import "../../../node_modules/tailwindcss/base";
-//
-//@import "../../../node_modules/tailwindcss/components";
-//
-//@import "../../../node_modules/tailwindcss/utilities";
+.slide-leave-active,
+.slide-enter-active {
+  transition: 1s;
+}
 
+.slide-enter {
+  transform: translate(100%, 0);
+}
 
+.slide-leave-to {
+  transition: 0s;
+}
+.opposite-leave-active,
+.opposite-enter-active {
+  transition: 1s;
+}
+
+.opposite-enter {
+  transform: translate(-100%, 0);
+}
+
+.opposite-leave-to {
+  transition: 0s;
+}

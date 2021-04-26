@@ -1,0 +1,133 @@
+.main_signup {
+    height: 700px;
+    color: white;
+    //background-size: cover;
+
+    &_leading_text {
+        p{
+            letter-spacing: 3px;
+            transform: rotate(90deg);
+            transform-origin: top left;
+            color: white;
+        }
+    }
+
+    &_vertical{
+        border-left: 6px solid #b83280;
+        height: 200px;
+        position:absolute;
+    }
+
+    &_heading_text {
+        padding-right: 50px;
+        padding-left: 20px;
+        h5 {
+            color: white;
+            font-weight: bolder;
+            font-size: 30px;
+        }
+
+        p {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            color: white;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+
+        span{
+            color: grey;
+        }
+
+        .list_items{
+            padding-bottom: 0px !important;
+            padding-top: 10px !important;
+            font-size: 16px !important;
+        }
+
+        button{
+            margin-left: 30px;
+            @include rounded_boxes($white)
+        }
+
+        .signin_link{
+            padding-top: 50px !important;
+            font-size: 14px !important;
+
+            span{
+                color: #b83280;
+            }
+        }
+
+    }
+
+    &_message {
+        padding-left: 10%;
+        padding-right: 10%;
+        text-align: center;
+
+        p {
+            color: black;
+            font-size: 18px;
+        }
+    }
+
+}
+
+.main_signup_form {
+    height: 800px;
+    padding-top: 10%;
+    background: white;
+    color : $home;
+    padding-left: 10%;
+
+    h2{
+        font-weight: bolder;
+        font-size: 32px;
+    }
+
+    form{
+        padding-top: 7%;
+
+        label{
+            color : $home;
+            font-weight: bolder;
+            font-size: 20px;
+            padding-bottom: 10px;
+        }
+
+        input[type="text"] {
+            border-radius: 5px;
+            border: 1px solid $home;
+            width: 90%;
+        }
+
+        .terms{
+            display: block;
+            margin-top: 20px;
+            padding-right: 20px;
+            label {
+                display: inline;
+                font-weight: normal;
+                font-size: 14px;
+            }
+            input[type=checkbox] {
+                display: inline;
+            }
+
+            span{
+                color: $dark-pink;
+            }
+        }
+
+
+    }
+
+
+    &_execute {
+        @include rounded_boxes($dark-pink);
+        color: $white;
+        background-color: $dark-pink;
+        margin-top : 10px
+    }
+}
