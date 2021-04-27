@@ -1,0 +1,21 @@
+.v-sidebar-menu {
+    background-color: black;
+    color: white;
+    height: 700px;
+}
+.v-sidebar-menu .vsm--item {
+    position: relative;
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    padding-top: 10px !important;
+}
+
+.v-sidebar-menu .vsm--header {
+    font-size: 16px !important;
+    font-weight: 600;
+    padding: 10px;
+    white-space: nowrap;
+    text-transform: none !important;
+    text-align: center !important;
+}

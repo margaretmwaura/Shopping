@@ -28,6 +28,12 @@ Route::get('/', function () {
 Route::post('/login', 'LoginController@authenticate');
 Route::post('/register', 'RegistrationController@register');
 
+//Route::get('/dashboard', 'DashboardController@index');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
 
 //// Protected Routes - allows only logged in users
 //Route::middleware('auth')->group(function () {

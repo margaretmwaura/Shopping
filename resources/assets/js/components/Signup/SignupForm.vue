@@ -37,6 +37,7 @@
 
 <script>
     import axios from "axios";
+    import router from "../../approuter/router";
     export default {
         data(){
             return {
@@ -54,6 +55,7 @@
 
                 axios.post('register', this.form).then(({data}) => {
                     console.log(data.data)
+                    router.push({name: 'dashboard'});
                 })
             }
         }

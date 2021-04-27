@@ -14,7 +14,14 @@
 <body>
 
 <div id="root">
-    <router-view></router-view>
+    <div v-if="$route.name">
+        <transition name="fade">
+            <router-view></router-view>
+        </transition>
+    </div>
+    <div v-else>
+        @yield('content')
+    </div>
 </div>
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>

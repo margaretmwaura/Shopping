@@ -15,6 +15,9 @@ import Notifications from 'vue-notification'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
 
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
+
 Vue.use(VueMaterial);
 Vue.use(Notifications);
 

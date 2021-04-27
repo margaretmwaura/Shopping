@@ -14,8 +14,18 @@ class LoginController extends Controller
         $attributes = $requestFields->only(['email', 'password']);
 
         if (Auth::attempt($attributes)) {
-            return redirect()->route('/');
+
+            return response()->json([
+                'status' => 200,
+                'message' => 'Login was successful',
+            ]);
+
         }
+
+        return response()->json([
+            'status' => 404,
+            'message' => 'Login was unsuccessful',
+        ]);
     }
 
     public function logout()

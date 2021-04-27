@@ -6,6 +6,8 @@
 @import "Signin/signin";
 @import "Signup/signup";
 @import "Home/home";
+@import "Dashboard/dashboard";
+@import "../../../node_modules/vue-sidebar-menu/src/scss/vue-sidebar-menu.scss";
 
 .slide-leave-active,
 .slide-enter-active {
