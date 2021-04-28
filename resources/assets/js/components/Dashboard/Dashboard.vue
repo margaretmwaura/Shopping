@@ -1,6 +1,16 @@
 <template>
-    <sidebar-menu :menu="menu">
-    </sidebar-menu>
+    <div>
+        <div id="view" :class="{'collapsed' : collapsed}">
+            <router-view/>
+        </div>
+        <sidebar-menu
+            class="sidebar"
+            :menu="menu"
+            :collapsed="collapsed"
+            @item-click="onItemClick"
+            @toggle-collapse="onCollapse"
+        />
+    </div>
 </template>
 
 <script>
@@ -19,21 +29,39 @@
                         hiddenOnCollapse: true
                     },
                     {
-                        href: '/',
-                        title: 'Dashboard',
+                        href: '/dashboard',
+                        title: 'Overview',
                         icon: 'fa fa-user'
                     },
                     {
-                        href: '/charts',
-                        title: 'Charts',
+                        href: '/suppliers',
+                        title: 'Suppliers',
+                        icon: 'fa fa-user'
+                    },
+                    {
+                        href: '/products',
+                        title: 'Products',
                         icon: 'fa fa-chart-area',
                     }
-                ]
+                ],
+                collapsed: true,
+            }
+        },
+        methods: {
+            onItemClick(e, i) {
+            },
+            onCollapse(c) {
+                this.collapsed = c;
             }
         }
     }
 </script>
 
 <style scoped lang="scss">
-
+    #view {
+        padding-left: 350px;
+    }
+    #view.collapsed {
+        padding-left: 50px;
+    }
 </style>
