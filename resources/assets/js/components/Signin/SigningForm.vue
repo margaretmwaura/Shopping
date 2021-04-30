@@ -43,7 +43,11 @@
         methods : {
             signIn : function () {
                 axios.post('login', this.form).then(({data}) => {
-                    console.log(data.data)
+                    if(data.status === 200){
+                        window.location.href = '/dashboard';
+                    }else{
+                        console.log(data);
+                    }
                 })
             }
         }

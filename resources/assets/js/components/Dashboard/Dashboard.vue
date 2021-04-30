@@ -1,6 +1,7 @@
 <template>
     <div>
-        <div id="view" :class="{'collapsed' : collapsed}">
+        <div id="view" :class="{'collapsed' : collapsed}" class="bg-gray-50">
+            <div class="h-16 bg-white shadow-lg"> </div>
             <router-view/>
         </div>
         <sidebar-menu

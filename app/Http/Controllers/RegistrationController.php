@@ -14,6 +14,9 @@ class RegistrationController extends Controller
     {
         $this->registerUser($requestFields);
 
-        return redirect('/');
+        return response()->json([
+            'status' => 200,
+            'message' => 'Signup was successful'
+        ]);
     }
 }
