@@ -11,17 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-// Register & Login User
-Route::post('/login', 'LoginController@authenticate');
-Route::post('/register', 'RegistrationController@register');
-
-
-
 // Protected Routes - allows only logged in users
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', 'DashboardController@index');
+    Route::post('/supplier/{id?}', 'SupplierController@create');
+
+    Route::get('/supplier/delete/{id}', 'SupplierController@delete');
 });
