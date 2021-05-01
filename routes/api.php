@@ -14,6 +14,10 @@ use Illuminate\Http\Request;
 */
 Route::post('login', 'AuthController@login');
 
+Route::get('/users', 'Api\UserApiController@getUsers');
+
+Route::get('/users/map_data', 'Api\UserApiController@getChartData');
+
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/suppliers', 'SupplierApiController@index');
 });

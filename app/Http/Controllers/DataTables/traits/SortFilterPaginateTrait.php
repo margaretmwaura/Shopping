@@ -1,6 +1,6 @@
 <?php
 
-namespace HumanResource\Api\DataTables;
+namespace App\Http\Controllers\DataTables\traits;
 
 use Illuminate\Database\QueryException;
 

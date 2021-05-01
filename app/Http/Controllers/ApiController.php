@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\DataTables\SortFilterPaginateInterface;
-use HumanResource\Api\DataTables\SortFilterPaginateTrait;
+
+use App\Http\Controllers\DataTables\traits\SortFilterPaginateTrait;
 use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 
