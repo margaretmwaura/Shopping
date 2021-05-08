@@ -12,6 +12,8 @@ import products from "../components/Products/Products";
 
 Vue.use(VueRouter);
 
+
+// This is bound to change we just have it as that for the purposes of making the GIF
 const router = new VueRouter(
     {
         routes: [
@@ -27,12 +29,12 @@ const router = new VueRouter(
             },
             {
                 path: '/dashboard',
-                component: Overview,
+                component: suppliers,
                 name: 'dashboard',
             },
             {
                 path: '/suppliers',
-                component: suppliers,
+                component: Overview,
                 name: 'suppliers'
             },
             {

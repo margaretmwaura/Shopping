@@ -32,6 +32,9 @@ class LoginController extends Controller
     {
         Session::flush();
         Auth::logout();
-        return back();
+        return response()->json([
+            'status' => 200,
+            'message' => 'Logging out',
+        ]);
     }
 }

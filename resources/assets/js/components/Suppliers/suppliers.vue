@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-flow-col grid-cols-2 gap-4">
+    <div class="grid grid-flow-col sm:grid-cols-1 md:grid-cols-2 gap-4">
         <div class="mt-12 ml-12">
             <h2 class="font-black text-2xl">Register a supplier</h2>
             <form @submit.prevent="create" class="border-purple-200 pt-4">

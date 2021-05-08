@@ -18,10 +18,12 @@ Route::get('/', function () {
 // Register & Login User
 Route::post('/login', 'LoginController@authenticate');
 Route::post('/register', 'RegistrationController@register');
-
+Route::post('/logout', 'LoginController@logout');
 
 
 // Protected Routes - allows only logged in users
-Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', 'DashboardController@index');
-});
+//Route::middleware('auth')->group(function () {
+//
+//});
+
+Route::get('/dashboard', 'DashboardController@index');

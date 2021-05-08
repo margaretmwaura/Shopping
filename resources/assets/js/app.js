@@ -18,6 +18,11 @@ import 'vue-material/dist/vue-material.min.css'
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 
+import VueToast from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-sugar.css';
+
+Vue.use(VueToast);
+
 Vue.use(VueMaterial);
 Vue.use(Notifications);
 
