@@ -1,10 +1,11 @@
 <?php
 
 
-namespace App\Suppliers\Api;
+namespace App\Http\Controllers\Api;
 
 
 use App\Http\Controllers\ApiController;
+use App\Suppliers\Api\SupplierTransformer;
 use League\Fractal\Resource\Collection;
 use App\Suppliers\Supplier;
 

@@ -21,6 +21,11 @@ import '@fortawesome/fontawesome-free/js/all.js'
 import VueToast from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-sugar.css';
 
+import VueTelInput from 'vue-tel-input'
+import 'vue-tel-input/dist/vue-tel-input.css'
+
+Vue.use(VueTelInput)
+
 Vue.use(VueToast);
 
 Vue.use(VueMaterial);

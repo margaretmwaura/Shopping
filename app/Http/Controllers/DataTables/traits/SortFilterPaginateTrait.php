@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\DataTables\traits;
 
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Input;
 
 /**
  * Class SortFilterPaginateTrait
@@ -36,7 +37,7 @@ trait SortFilterPaginateTrait
      */
     public function filter($model)
     {
-        $state = \Input::get('tableState');
+        $state = Input::get('tableState');
 
         //filter
         if (isset($state['search']['predicateObject']['$'])) {
@@ -57,7 +58,7 @@ trait SortFilterPaginateTrait
      */
     public function sort($model)
     {
-        $state = \Input::get('tableState');
+        $state = Input::get('tableState');
 
         //sort
         if (isset($state['sort'])) {
@@ -81,7 +82,7 @@ trait SortFilterPaginateTrait
     public function paginate($model)
     {
         $page = $model->get();
-        $state = \Input::get('tableState');
+        $state = Input::get('tableState');
 
         //pagination
         if ($state['pagination']) {

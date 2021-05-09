@@ -2,7 +2,7 @@
     <div>
         <div id="view" :class="{'collapsed' : collapsed}" class="bg-gray-50" >
             <div class="relative h-16 bg-white shadow-lg">
-                <img :src="`./../../../images/profile.svg`" class="absolute bottom-2 right-12 w-10 h-10">
+                <img :src="`./../../../images/delivery-man.svg`" class="absolute bottom-2 right-12 w-10 h-10">
                 <div class="absolute bottom-1 right-0 w-10 h-10" v-on:click="showLogoutIcon"><i class="fa fa-caret-down"></i></div>
             </div>
             <div class="absolute top-20 right-5 h-20 w-24 z-50 bg-white shadow-lg flex items-stretch" v-show="showLogout">
