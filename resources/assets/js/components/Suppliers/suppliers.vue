@@ -79,7 +79,7 @@
                     },
                     {
                         name: 'email',
-                        title: 'Email Address'
+                        title: 'Email Address fa fa-envelope-open'
                     },
                     {
                         name: 'location',
@@ -154,6 +154,8 @@
                             // all of other options may go here
                         });
 
+                        this.getMapData();
+
                     } else {
                         Vue.$toast.open({
                             message: 'An error occurred while creating a supplier',
@@ -179,13 +181,8 @@
                 })
             },
             getMapData: function () {
-                axios.get('/api/users/map_data', this.form).then(({data}) => {
+                axios.get('/api/suppliers/map_data', this.form).then(({data}) => {
                     this.dates = data
-                    // this.dates = this.dates.map(function(o,i) {
-                    //     if(typeof o === 'object'){
-                    //        return Object.keys(o);
-                    //     }
-                    // });
                 })
             }
         },

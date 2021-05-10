@@ -20,3 +20,4 @@ Route::get('/users/map_data', 'Api\UserApiController@getChartData');
 
 Route::get('/suppliers', 'Api\SupplierApiController@index');
 
+Route::get('/suppliers/map_data', 'Api\SupplierApiController@getChartData');
