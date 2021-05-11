@@ -43,7 +43,29 @@
         methods : {
             signIn : function () {
                 axios.post('login', this.form).then(({data}) => {
-                    console.log(data.data)
+                    if(data.status == 200){
+                        Vue.$toast.open({
+                            message: 'Sign in was successful',
+                            type: 'success',
+                            position : 'bottom-left'
+                            // all of other options may go here
+                        });
+                        window.location.href = '/dashboard';
+                    }else{
+                        Vue.$toast.open({
+                            message: 'An error occured during sign in',
+                            type: 'error',
+                            position : 'bottom-left'
+                            // all of other options may go here
+                        });
+                    }
+                }, () => {
+                    Vue.$toast.open({
+                        message: 'An error occured during sign in',
+                        type: 'error',
+                        position : 'bottom-left'
+                        // all of other options may go here
+                    });
                 })
             }
         }

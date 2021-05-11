@@ -12,8 +12,11 @@ class RegistrationController extends Controller
 
     public function register(RegistrationRequest $requestFields)
     {
-        $user = $this->registerUser($requestFields);
+        $this->registerUser($requestFields);
 
-        return redirect('/');
+        return response()->json([
+            'status' => 200,
+            'message' => 'Signup was successful'
+        ]);
     }
 }

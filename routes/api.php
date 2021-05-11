@@ -14,6 +14,12 @@ use Illuminate\Http\Request;
 */
 Route::post('login', 'AuthController@login');
 
-Route::group(['middleware' => 'auth.api'], function() {
-    Route::get('logout', 'AuthController@logout');
-});
+//Route::middleware('auth')->group(function () {
+    Route::get('/users', 'Api\UserApiController@getUsers');
+
+    Route::get('/users/map_data', 'Api\UserApiController@getChartData');
+
+    Route::get('/suppliers', 'Api\SupplierApiController@index');
+
+    Route::get('/suppliers/map_data', 'Api\SupplierApiController@getChartData');
+//});

@@ -6,6 +6,24 @@
 @import "Signin/signin";
 @import "Signup/signup";
 @import "Home/home";
+@import "Dashboard/dashboard";
+@import "../../../node_modules/vue-sidebar-menu/src/scss/vue-sidebar-menu.scss";
+@import "Supplier/supplier";
+
+.vue-tel-input {
+    border-radius: 3px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: left;
+}
+.vti__input {
+    border-radius: 0 2px 2px 0;
+    width: 100%;
+    outline: none;
+    padding-left: 7px;
+    margin: 0;
+}
 
 .slide-leave-active,
 .slide-enter-active {
@@ -31,3 +49,4 @@
 .opposite-leave-to {
   transition: 0s;
 }
+

@@ -12,26 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
-
-# File: routes/web.php
-
-// Show Register Page & Login Page
-//Route::get('/login', 'LoginController@show')->name('login')->middleware('guest');
-//Route::get('/register', 'RegistrationController@show')
-//    ->name('register')
-//    ->middleware('guest');
-
 
 // Register & Login User
 Route::post('/login', 'LoginController@authenticate');
 Route::post('/register', 'RegistrationController@register');
+Route::post('/logout', 'LoginController@logout');
 
 
-//// Protected Routes - allows only logged in users
+// Protected Routes - allows only logged in users
 //Route::middleware('auth')->group(function () {
-//    Route::get('/', 'DashboardController@index');
 //
-//    Route::post('/logout', 'LoginController@logout');
 //});
+
+Route::get('/dashboard', 'DashboardController@index');
