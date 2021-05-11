@@ -7,3 +7,4 @@ The local users can now in turn make orders from the application
 - Styling vuejs components using sass and tailwind css
 - Using the repository pattern in laravel
 - The MVC architecture in laravel
+- Vuejs Transitions inspired by this tweet https://twitter.com/S_Alwayshungry/status/1298182551954046978 on my signup and siginin pages
