@@ -12,8 +12,8 @@
 */
 
 // Protected Routes - allows only logged in users
-Route::middleware('auth')->group(function () {
+//Route::middleware('auth')->group(function () {
     Route::post('/supplier/{id?}', 'SupplierController@create');
 
     Route::get('/supplier/delete/{id}', 'SupplierController@delete');
-});
+//});

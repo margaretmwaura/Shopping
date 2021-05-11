@@ -14,10 +14,12 @@ use Illuminate\Http\Request;
 */
 Route::post('login', 'AuthController@login');
 
-Route::get('/users', 'Api\UserApiController@getUsers');
+//Route::middleware('auth')->group(function () {
+    Route::get('/users', 'Api\UserApiController@getUsers');
 
-Route::get('/users/map_data', 'Api\UserApiController@getChartData');
+    Route::get('/users/map_data', 'Api\UserApiController@getChartData');
 
-Route::get('/suppliers', 'Api\SupplierApiController@index');
+    Route::get('/suppliers', 'Api\SupplierApiController@index');
 
-Route::get('/suppliers/map_data', 'Api\SupplierApiController@getChartData');
+    Route::get('/suppliers/map_data', 'Api\SupplierApiController@getChartData');
+//});

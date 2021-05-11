@@ -14,7 +14,9 @@ class SupplierRepository
 
         $supplier = Supplier::find($input['id']);
 
-        return $supplier->update($supplier);
+        unset($input['id']);
+
+        return $supplier->update($input);
     }
 
     public function delete($id){

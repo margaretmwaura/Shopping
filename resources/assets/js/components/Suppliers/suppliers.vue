@@ -2,7 +2,7 @@
     <div class="ml-12 mr-12">
         <div class="grid-x grid-padding-x">
             <div class="cell small-12 medium-6 large-6 mt-12">
-                <h2 class="font-black text-2xl">Register a supplier</h2>
+                <h2 class="font-black text-2xl">{{ title }}</h2>
                 <form @submit.prevent="create" class="border-purple-200 pt-4">
                     <label class="text-base">Location *</label>
                     <input type="text" v-model="form.location" placeholder="Enter the location" required
@@ -27,7 +27,7 @@
 
                     <br>
 
-                    <button class="main_signup_form_execute">Create</button>
+                    <button class="main_signup_form_execute">{{buttonMessage}}</button>
 
                 </form>
             </div>
@@ -57,8 +57,9 @@
     import axios from "axios";
     import 'zingchart/es6';
     import zingchartVue from 'zingchart-vue';
-    import Vuetable from 'vuetable-2';
+    import Vuetable from './../../../../../node_modules/vuetable-2/src/components/Vuetable';
     import CssConfig from "./../../VuetableConfig";
+    import eventBus from "../../eventBus";
 
     export default {
         components: {
@@ -79,7 +80,7 @@
                     },
                     {
                         name: 'email',
-                        title: 'Email Address fa fa-envelope-open'
+                        title: 'Email Address'
                     },
                     {
                         name: 'location',
@@ -89,7 +90,14 @@
                         name: 'phone_number',
                         title: 'Telephone Number'
                     },
-                ]
+                    {
+                        name: '__component:custom_actions',
+                        title: 'Action',
+                    },
+                ],
+                edit: false,
+                title: "Register a supplier",
+                buttonMessage : "Create"
             }
         },
         computed: {
@@ -112,7 +120,7 @@
                     },
                     scaleY: {
                         // scale label with unicode character
-                        values: "0:20:1",
+                        values: "0:10:1",
                         label: {
                             text: 'Count'
                         }
@@ -146,30 +154,36 @@
         methods: {
             create: function () {
                 this.form.user_id = this.selectedUser
-                axios.post('/supplier', this.form).then(({data}) => {
-                    if (data.status == 201) {
-                        Vue.$toast.open({
-                            message: 'Supplier was successfully created',
-                            type: 'success',
-                            // all of other options may go here
-                        });
+                console.log(this.edit)
+                if (this.edit == true) {
+                    this.editSupplier()
+                } else {
+                    axios.post('/supplier', this.form).then(({data}) => {
+                        if (data.status == 201) {
+                            Vue.$toast.open({
+                                message: 'Supplier was successfully created',
+                                type: 'success',
+                                // all of other options may go here
+                            });
+                            this.form = {}
+                            this.selectedUser = null
+                            this.getMapData();
 
-                        this.getMapData();
-
-                    } else {
+                        } else {
+                            Vue.$toast.open({
+                                message: 'An error occurred while creating a supplier',
+                                type: 'error',
+                                // all of other options may go here
+                            });
+                        }
+                    }, () => {
                         Vue.$toast.open({
                             message: 'An error occurred while creating a supplier',
                             type: 'error',
                             // all of other options may go here
                         });
-                    }
-                }, () => {
-                    Vue.$toast.open({
-                        message: 'An error occurred while creating a supplier',
-                        type: 'error',
-                        // all of other options may go here
-                    });
-                })
+                    })
+                }
             },
             getUsers: function () {
                 let placeHolderUser = {}
@@ -184,12 +198,51 @@
                 axios.get('/api/suppliers/map_data', this.form).then(({data}) => {
                     this.dates = data
                 })
+            },
+            editSupplier: function (e) {
+                axios.post('/supplier/' + this.form.id, this.form).then(({data}) => {
+                    if (data.status == 201) {
+                        Vue.$toast.open({
+                            message: 'Supplier was successfully edited',
+                            type: 'success',
+                            // all of other options may go here
+                        });
+                        this.title = "Register a supplier"
+                        this.buttonMessage = "Create"
+                        this.form = {}
+                        this.selectedUser = null
+                    } else {
+                        Vue.$toast.open({
+                            message: 'An error occurred while editing a supplier',
+                            type: 'error',
+                            // all of other options may go here
+                        });
+                    }
+                }, () => {
+                    Vue.$toast.open({
+                        message: 'An error occurred while editing a supplier',
+                        type: 'error',
+                        // all of other options may go here
+                    });
+                })
             }
         },
         mounted() {
             this.getUsers();
             this.getMapData();
-        }
+            eventBus.$on('selected-supplier', (supplier) => {
+                this.form = supplier
+                this.edit = true
+                this.selectedUser = supplier.user_id
+                window.scrollTo(0, 0);
+                this.title = "Edit a supplier"
+                this.buttonMessage = "Edit"
+            });
+            eventBus.$on('reload-page', () => {
+                this.$refs.vuetable.refresh()
+                this.getMapData()
+            })
+        },
     }
 </script>
 
