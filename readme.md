@@ -8,3 +8,5 @@ The local users can now in turn make orders from the application
 - Using the repository pattern in laravel
 - The MVC architecture in laravel
 - Vuejs Transitions inspired by this tweet https://twitter.com/S_Alwayshungry/status/1298182551954046978 on my signup and siginin pages
+
+![project_demo](https://user-images.githubusercontent.com/34396651/117752037-c6436280-b21e-11eb-8693-13487963cb09.gif)
