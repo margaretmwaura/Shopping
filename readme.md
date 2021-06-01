@@ -12,3 +12,6 @@ You can access it on heroku https://murmuring-peak-18281.herokuapp.com/
 - Vuejs Transitions inspired by this tweet https://twitter.com/S_Alwayshungry/status/1298182551954046978 on my signup and siginin pages
 
 ![project_demo](https://user-images.githubusercontent.com/34396651/117752037-c6436280-b21e-11eb-8693-13487963cb09.gif)
+
+### Work In Progress
+- The products section and the Order section are under development
