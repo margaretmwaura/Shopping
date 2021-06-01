@@ -9,6 +9,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Styles -->
+
+    <!-- Dealing with the mixed content error -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
