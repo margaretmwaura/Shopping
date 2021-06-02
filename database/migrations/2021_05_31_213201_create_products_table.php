@@ -16,8 +16,7 @@ class CreateProductsTable extends Migration {
 		{
 			$table->integer('id', true);
 			$table->string('name', 45)->nullable();
-			$table->string('description', 45)->nullable();
-			$table->string('quantity', 45)->nullable();
+			$table->string('description', 450)->nullable();
 			$table->timestamps();
 			$table->softDeletes();
 		});
