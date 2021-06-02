@@ -15,4 +15,4 @@ You can access it on heroku https://empress-shop.herokuapp.com/
 ![project_demo](https://user-images.githubusercontent.com/34396651/117752037-c6436280-b21e-11eb-8693-13487963cb09.gif)
 
 ### Work In Progress
-- The products section and the Order section are under development
+- The Order section is under development
