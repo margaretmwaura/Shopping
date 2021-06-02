@@ -22,18 +22,13 @@
        </p>
    </div>
    <div class="container text-center pt-4">
-       <p class="font-normal text-lg">
+        <p class="font-normal text-lg">
               This is the section of the page where visitors will get 
               <br>
               a position to see what we are offering at the shop and make their 
               <br>
               orders. So many other cool functionalities will be present.
        </p>
-   </div>
-    <div class="container grid-x">
-        <div class="cell small-12 medium-12 large-12 ">
-            <img :src="`./../../../images/progress.jpeg`" class="center">
-        </div> 
    </div>
 </div>
 </template>
@@ -82,3 +77,4 @@
   width: 50%;
 }
 </style>
+

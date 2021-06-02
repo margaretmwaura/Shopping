@@ -18,7 +18,7 @@
               <br>
                <span>Getting Ready to </span>
                <br>
-               Launch soon 
+               Launch soon
        </p>
    </div>
    <div class="container text-center pt-4">
@@ -28,11 +28,7 @@
               <br> products when they come to buy
        </p>
    </div>
-    <div class="container grid-x">
-        <div class="cell small-12 medium-12 large-12 ">
-            <img :src="`./../../../images/progress.jpeg`" class="center">
-        </div> 
-   </div>
+
 </div>
 </template>
 
@@ -80,4 +76,3 @@
   width: 50%;
 }
 </style>
-
