@@ -48,9 +48,7 @@
                 </vuetable>
             </div>
         </div>
-
     </div>
-
 </template>
 
 <script>

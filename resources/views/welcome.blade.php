@@ -10,7 +10,7 @@
     <!-- Styles -->
 
     <!-- Dealing with the mixed content error -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
