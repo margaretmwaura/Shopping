@@ -48,9 +48,7 @@
                 </vuetable>
             </div>
         </div>
-
     </div>
-
 </template>
 
 <script>
@@ -158,8 +156,8 @@
                 if (this.edit == true) {
                     this.editSupplier()
                 } else {
-                    axios.post('/supplier', this.form).then(({data}) => {
-                        if (data.status == 201) {
+                    axios.post('/supplier', this.form).then(response => {
+                        if (response.data.status == 201) {
                             Vue.$toast.open({
                                 message: 'Supplier was successfully created',
                                 type: 'success',
@@ -168,6 +166,7 @@
                             this.form = {}
                             this.selectedUser = null
                             this.getMapData();
+                            this.$refs.vuetable.refresh()
 
                         } else {
                             Vue.$toast.open({
@@ -176,12 +175,30 @@
                                 // all of other options may go here
                             });
                         }
-                    }, () => {
-                        Vue.$toast.open({
-                            message: 'An error occurred while creating a supplier',
+                    }).catch(error => {
+                        let errors = error.response.data.errors;
+                        if(errors['user_id']){
+                            Vue.$toast.open({
+                            message: errors['user_id'][0],
                             type: 'error',
                             // all of other options may go here
                         });
+                        }
+                        if(errors['phone_number']){
+                            Vue.$toast.open({
+                            message: errors['phone_number'][0],
+                            type: 'error',
+                            // all of other options may go here
+                        });
+                        }
+                        if(errors['location']){
+                            Vue.$toast.open({
+                            message: errors['location'][0],
+                            type: 'error',
+                            // all of other options may go here
+                        });
+                        }
+                      
                     })
                 }
             },
@@ -200,8 +217,8 @@
                 })
             },
             editSupplier: function (e) {
-                axios.post('/supplier/' + this.form.id, this.form).then(({data}) => {
-                    if (data.status == 201) {
+                axios.post('/supplier/' + this.form.id, this.form).then(response => {
+                    if (response.data.status == 201) {
                         Vue.$toast.open({
                             message: 'Supplier was successfully edited',
                             type: 'success',
@@ -211,6 +228,7 @@
                         this.buttonMessage = "Create"
                         this.form = {}
                         this.selectedUser = null
+                        this.$refs.vuetable.refresh()
                     } else {
                         Vue.$toast.open({
                             message: 'An error occurred while editing a supplier',
@@ -218,12 +236,30 @@
                             // all of other options may go here
                         });
                     }
-                }, () => {
-                    Vue.$toast.open({
-                        message: 'An error occurred while editing a supplier',
-                        type: 'error',
-                        // all of other options may go here
-                    });
+                }).catch(error => {
+                        let errors = error.response.data.errors;
+                        if(errors['user_id']){
+                            Vue.$toast.open({
+                            message: errors['user_id'][0],
+                            type: 'error',
+                            // all of other options may go here
+                        });
+                        }
+                        if(errors['phone_number']){
+                            Vue.$toast.open({
+                            message: errors['phone_number'][0],
+                            type: 'error',
+                            // all of other options may go here
+                        });
+                        }
+                        if(errors['location']){
+                            Vue.$toast.open({
+                            message: errors['location'][0],
+                            type: 'error',
+                            // all of other options may go here
+                        });
+                        }
+                      
                 })
             }
         },

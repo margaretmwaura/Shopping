@@ -38,17 +38,17 @@
                     },
                     {
                         href: '/dashboard',
-                        title: 'Overview',
+                        title: 'Suppliers',
                         icon: 'fa fa-chart-pie'
                     },
                     {
                         href: '/suppliers',
-                        title: 'Suppliers',
+                        title: 'Products',
                         icon: 'fa fa-user'
                     },
                     {
                         href: '/products',
-                        title: 'Products',
+                        title: 'Overview',
                         icon: 'fa fa-chart-area',
                     }
                 ],

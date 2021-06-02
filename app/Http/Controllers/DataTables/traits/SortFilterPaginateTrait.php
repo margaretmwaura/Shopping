@@ -85,13 +85,13 @@ trait SortFilterPaginateTrait
         $state = Input::get('tableState');
 
         //pagination
-        if ($state['pagination']) {
+        if ($state && $state['pagination']) {
             $offset = (int)$state['pagination']['start'];
             $this->perPage = $state['pagination']['number'];
-            $model = $model->offset($offset)->take($this->perPage)->get();
+            $model = $model->offset($offset)->take($this->perPage)->latest()->get();
         } else {
             $offset = 0;
-            $model = $model->offset($offset)->take($this->perPage)->get();
+            $model = $model->offset($offset)->take($this->perPage)->latest()->get();
         }
         $totalPages = ceil(count($page) / $this->perPage);
 

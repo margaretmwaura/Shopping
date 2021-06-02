@@ -6,13 +6,13 @@
 
         <form @submit.prevent="signup">
             <label>Full Name *</label>
-            <input type="text" v-model="form.name" placeholder="Enter your fullname" required/>
+            <input type="text" v-model="form.name" placeholder="Enter your fullname"  autocomplete="new-password" required/>
 
             <label>Email *</label>
-            <input type="text" v-model="form.email" placeholder="Enter your email" required/>
+            <input type="text" v-model="form.email" placeholder="Enter your email" autocomplete="new-password" required/>
 
             <label>Password *</label>
-            <input type="password" v-model="form.password" placeholder="Enter your password" required/>
+            <input type="password" v-model="form.password" placeholder="Enter your password" required />
 
             <label>Repeat password *</label>
             <input type="password" v-model="password2" placeholder="Confirm password" required/>

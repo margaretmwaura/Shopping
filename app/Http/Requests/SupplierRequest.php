@@ -28,6 +28,7 @@ class SupplierRequest extends FormRequest
         return [
             'location' => ['required', 'string'],
             'phone_number' => ['required', 'string'],
+            'user_id' => ['required', 'unique:suppliers,user_id'],
         ];
     }
 }
