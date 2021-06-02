@@ -15,15 +15,13 @@ class ProductApiController  extends ApiController
 {
     public function index()
     {
-        $suppliers = new Product();
+        $products = Product::all()->map(
+            function (Product $product) {
+                return (new ProductTransformer())->transform($product);
+            }
+        );
 
-        $paginated = $this->sortAndPaginate($suppliers);
-
-        $resource = new Collection($paginated['model'], new ProductTransformer());
-
-        $this->addPaginationToResource($paginated, $resource);
-
-        return $this->fractal->createData($resource)->toJson();
+        return response()->json(['data' => $products]);
     }
 
     public function getChartData()

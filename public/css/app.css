@@ -5735,6 +5735,9 @@ html, body {
 .supplier {
   height: 1000px; }
 
+.product {
+  height: 1000px; }
+
 .vue-tel-input {
   border-radius: 3px;
   display: flex;

@@ -28,8 +28,6 @@ class ProductRequest extends FormRequest
         return [
             'name' => ['required', 'string'],
             'description' => ['required', 'string'],
-            'quantity' => ['required'],
-            'supplier_id' => ['required'],
         ];
     }
 }

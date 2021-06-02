@@ -44,7 +44,7 @@
                           :fields="fields"
                           data-path="data"
                           pagination-path=""
-                          noDataTemplate="No transfers scheduled yet">
+                          noDataTemplate="No suppliers yet">
                 </vuetable>
             </div>
         </div>
@@ -141,7 +141,6 @@
                         },
                     ]
                 }
-
             }
         },
         watch: {
@@ -212,7 +211,7 @@
                 })
             },
             getMapData: function () {
-                axios.get('/api/suppliers/map_data', this.form).then(({data}) => {
+                axios.get('/api/suppliers/map_data').then(({data}) => {
                     this.dates = data
                 })
             },

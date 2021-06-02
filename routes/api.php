@@ -22,4 +22,8 @@ Route::post('login', 'AuthController@login');
     Route::get('/suppliers', 'Api\SupplierApiController@index');
 
     Route::get('/suppliers/map_data', 'Api\SupplierApiController@getChartData');
+
+    Route::get('/products', 'Api\ProductApiController@index');
+
+Route::get('/products/map_data', 'Api\ProductApiController@getChartData');
 //});

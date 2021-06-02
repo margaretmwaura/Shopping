@@ -4,13 +4,13 @@
         <div class="cell small-12 medium-5 large-5">
         </div>
         <div class="cell small-12 medium-1 large-1 ">
-          <img :src="`./../../../images/another.svg`" class="left"> 
+          <img :src="`./../../../images/another.svg`" class="left">
         </div>
         <div class="cell small-12 medium-1 large-1">
            <img :src="`./../../../images/gear.svg`" class="right">
         </div>
-        <div class="cell small-12 medium-5 large-5">  
-        </div>   
+        <div class="cell small-12 medium-5 large-5">
+        </div>
    </div>
    <div class="container text-center">
        <p class="font-extrabold text-4xl">
@@ -18,14 +18,14 @@
               <br>
                <span>Getting Ready to </span>
                <br>
-               Launch soon 
+               Launch soon
        </p>
    </div>
    <div class="container text-center pt-4">
         <p class="font-normal text-lg">
-              This is the section of the page where visitors will get 
+              This is the section of the page where visitors will get
               <br>
-              a position to see what we are offering at the shop and make their 
+              a position to see what we are offering at the shop and make their
               <br>
               orders. So many other cool functionalities will be present.
        </p>
