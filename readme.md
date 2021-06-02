@@ -1,7 +1,7 @@
 ## The Shopping App (e-commerce site)
 This an app that will allow admin to register users as suppliers and in turn suppliers can register the products they provide.
 The local users can now in turn make orders from the application
-You can access it on heroku https://murmuring-peak-18281.herokuapp.com/
+You can access it on heroku https://empress-shop.herokuapp.com/
 
 ### What you will learn
 - Using laravel and Vuejs in a project
