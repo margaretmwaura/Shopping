@@ -4,11 +4,11 @@ import VueRouter from 'vue-router';
 import Home from "../components/Home";
 import landing from "../components/Landing";
 
-import Overview from "../components/Overview/Overview";
+import products from "../components/Products/products";
 
 import suppliers from "../components/Suppliers/suppliers";
 
-import products from "../components/Products/Products";
+import order from "../components/Order/order.vue";
 
 Vue.use(VueRouter);
 
@@ -33,14 +33,14 @@ const router = new VueRouter(
                 name: 'dashboard',
             },
             {
-                path: '/suppliers',
-                component: Overview,
-                name: 'suppliers'
-            },
-            {
                 path: '/products',
                 component: products,
                 name: 'products'
+            },
+            {
+                path: '/order',
+                component: order,
+                name: 'order'
             },
 
         ],

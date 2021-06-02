@@ -42,13 +42,13 @@
                         icon: 'fa fa-chart-pie'
                     },
                     {
-                        href: '/suppliers',
+                        href: '/products',
                         title: 'Products',
                         icon: 'fa fa-user'
                     },
                     {
-                        href: '/products',
-                        title: 'Overview',
+                        href: '/order',
+                        title: 'Make an order',
                         icon: 'fa fa-chart-area',
                     }
                 ],

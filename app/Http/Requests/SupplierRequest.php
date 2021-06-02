@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Input;
 
 class SupplierRequest extends FormRequest
 {
@@ -25,10 +26,17 @@ class SupplierRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'location' => ['required', 'string'],
-            'phone_number' => ['required', 'string'],
-            'user_id' => ['required', 'unique:suppliers,user_id'],
-        ];
+        if(!Input::has('id')) {
+            return [
+                'location' => ['required', 'string'],
+                'phone_number' => ['required', 'string'],
+                'user_id' => ['required', 'unique:suppliers,user_id'],
+            ];
+        }else{
+            return [
+                'location' => ['required', 'string'],
+                'phone_number' => ['required', 'string'],
+            ];
+        }
     }
 }

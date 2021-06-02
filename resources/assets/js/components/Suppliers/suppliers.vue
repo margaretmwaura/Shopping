@@ -13,7 +13,7 @@
 
                     <label class="text-base mt-2">User *</label>
                     <select v-model="selectedUser" required
-                            class="rounded-lg border-blue-400 mt-2 pl-2">
+                            class="rounded-lg border-blue-400 mt-2 pl-2" v-if="!edit">
                         <option v-for="user in users" v-bind:value="user.id">
                             {{ user.name }}
                         </option>
@@ -198,7 +198,7 @@
                             // all of other options may go here
                         });
                         }
-                      
+
                     })
                 }
             },
@@ -229,6 +229,7 @@
                         this.form = {}
                         this.selectedUser = null
                         this.$refs.vuetable.refresh()
+                        this.edit = false;
                     } else {
                         Vue.$toast.open({
                             message: 'An error occurred while editing a supplier',
@@ -259,7 +260,7 @@
                             // all of other options may go here
                         });
                         }
-                      
+
                 })
             }
         },
