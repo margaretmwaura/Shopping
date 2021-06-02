@@ -9,6 +9,7 @@ You can access it on heroku https://murmuring-peak-18281.herokuapp.com/
 - Using the repository pattern in laravel
 - The MVC architecture in laravel
 - Using the ZingChart package to generate charts and graphs
+- Authentication using passport
 - Vuejs Transitions inspired by this tweet https://twitter.com/S_Alwayshungry/status/1298182551954046978 on my signup and siginin pages
 
 ![project_demo](https://user-images.githubusercontent.com/34396651/117752037-c6436280-b21e-11eb-8693-13487963cb09.gif)
