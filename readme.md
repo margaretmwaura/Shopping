@@ -12,7 +12,10 @@ You can access it on heroku https://empress-shop.herokuapp.com/
 - Authentication using passport
 - Vuejs Transitions inspired by this tweet https://twitter.com/S_Alwayshungry/status/1298182551954046978 on my signup and siginin pages
 
-![project_demo](https://user-images.githubusercontent.com/34396651/117752037-c6436280-b21e-11eb-8693-13487963cb09.gif)
-
 ### Work In Progress
 - The Order section is under development
+
+### A screen recording
+![project_demo](https://user-images.githubusercontent.com/34396651/117752037-c6436280-b21e-11eb-8693-13487963cb09.gif)
+
+
